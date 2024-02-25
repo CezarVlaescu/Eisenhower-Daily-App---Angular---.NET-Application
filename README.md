@@ -20,7 +20,7 @@ Daily Task Tracking: Keep track of completed, pending, and upcoming tasks, provi
 
 To run the Eisenhower Matrix Daily Planner locally, follow these steps:
 
-**Clone the repository** : git clone https://github.com/your-username/eisenhower-matrix-daily-planner.git
+**Clone the repository** : git clone https://github.com/CezarVlaescu/Eisenhower-Daily-App-Angular-.NET-Application.git
 
 **Navigate to the project directory**: cd eisenhower-matrix-daily-planner
 
