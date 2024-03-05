@@ -9,16 +9,24 @@ import { RegisterServiceService } from 'src/app/services/register-service.servic
 })
 export class RegisterComponent implements OnInit {
 
-  registerModel!: RegisterModel
+  registerModel: RegisterModel = new RegisterModel;
   
   ngOnInit(): void {}
 
-  constructor(private _registerService : RegisterServiceService){}
+  constructor(private _registerService : RegisterServiceService){
+  }
 
   submitUser(){
+    event?.preventDefault();
     return this._registerService.
     registerUser(this.registerModel).
-    subscribe(response => console.log("User registered successfully!", response))
+    subscribe(response => {
+      console.log("User registered successfully!", response);
+    },
+    error => {
+      console.error("Error registering user:", error);
+    }
+    )
   }
 
 }

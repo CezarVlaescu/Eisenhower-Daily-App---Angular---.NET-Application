@@ -1,30 +1,33 @@
-<form (ngSubmit)="submitUser()" [ngModel]="registerModel">
+<form (ngSubmit)="submitUser()">
     <div>
-        <label for="username">Username: </label>
+        <label for="Username">Username: </label>
         <input 
         type="text" 
-        name="username" 
+        name="Username" 
         placeholder="Enter your username" 
         required 
-        [ngModel]="registerModel.username"/>
+        [(ngModel)]="registerModel.Username"
+        />
     </div>
     <div>
-        <label for="email">Email: </label>
+        <label for="Email">Email: </label>
         <input 
         type="text" 
-        name="email" 
+        name="Email" 
         placeholder="Enter your email" 
         required 
-        [ngModel]="registerModel.email"/>
+        [(ngModel)]="registerModel.Email"
+        />
     </div>
     <div>
-        <label for="password">Password: </label>
+        <label for="Password">Password: </label>
         <input 
         type="password" 
-        name="password" 
+        name="Password" 
         placeholder="Enter your password" 
         required
-        [ngModel]="registerModel.password" />
+        [(ngModel)]="registerModel.Password"
+        />
     </div>
     <div>
         <label for="confirm-password">Confirm Password: </label>
@@ -35,22 +38,23 @@
         required />
     </div>
     <div>
-        <label for="firstname">Firstname: </label>
+        <label for="Firstname">Firstname: </label>
         <input 
         type="text" 
-        name="firstname" 
+        name="Firstname" 
         placeholder="Enter your firstname" 
         required
-        [ngModel]="registerModel.firstname" />
+        [(ngModel)]="registerModel.Firstname"
+        />
     </div>
     <div>
-        <label for="lastname">Lastname: </label>
+        <label for="Lastname">Lastname: </label>
         <input 
         type="text" 
-        name="lastname" 
+        name="Lastname" 
         placeholder="Enter your lastname" 
         required
-        [ngModel]="registerModel.lastname" />
+        [(ngModel)]="registerModel.Lastname" />
     </div>
     <button type="submit">Submit</button>
 </form>
