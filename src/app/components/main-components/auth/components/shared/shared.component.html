@@ -1,0 +1,15 @@
+<form>
+    <ng-content select="h1"></ng-content>
+
+    <label for="email">
+        <input type="text" placeholder="Email" name="email" [(ngModel)]="sharedInput.email" required >
+    </label>
+
+    <label for="password">
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="sharedInput.password" required>
+    </label>
+
+    <ng-content select="button"></ng-content>
+
+    <ng-content select="a"></ng-content>
+</form>
