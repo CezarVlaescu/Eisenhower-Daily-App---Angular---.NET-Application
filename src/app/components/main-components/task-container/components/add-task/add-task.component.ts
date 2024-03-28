@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NewTask, Importance } from '../../types/taskType';
 
 @Component({
   selector: 'app-add-task',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-task.component.scss']
 })
 export class AddTaskComponent {
+  newTask: NewTask = new NewTask();
+  importanceTask = Object.values(Importance);  
+
+  constructor() {}
+
+  onSubmitTask() {
+    throw new Error('Method not implemented.');
+    }
 
 }
