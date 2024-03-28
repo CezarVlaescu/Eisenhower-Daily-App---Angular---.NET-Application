@@ -1,1 +1,24 @@
-<p>add-task works!</p>
+<form (submit)="onSubmitTask()">
+    <label for="taskName">
+        <input type="text" name="taskName">
+    </label>
+    <label for="startDate">
+        <input type="date" name="startDate" >
+    </label>
+    <label for="endDate">
+        <input type="date" name="endDate" >
+    </label>
+    <br>
+    <label for="importance">
+        Importance:
+        <select name="importance" id="importance">
+            <option *ngFor="let imp of importanceTask" [value]="imp">{{ imp }}</option>
+        </select>
+    </label>
+    <br>
+    <label for="notes">
+        <textarea name="notes" cols="30" rows="10"></textarea>
+    </label>
+    <br>
+    <button type="submit">Add task</button>
+</form>
