@@ -16,10 +16,10 @@ export class AuthInterceptorInterceptor implements HttpInterceptor {
     
     const authToken = localStorage.getItem('token'); // to put the service that get the token from backend
 
-    if(authToken){
+    if(authToken){ // if the token is present
       const req = request.clone({
         headers: request.headers.set('Authorization', 'Bearer ' + authToken)
-      })
+      }) // attache to the user header
       return next.handle(req);
     }
     else return next.handle(request);
