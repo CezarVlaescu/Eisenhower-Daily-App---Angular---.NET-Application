@@ -1,23 +1,23 @@
 <form (submit)="onSubmitTask()">
     <label for="taskName">
-        <input type="text" name="taskName">
+        <input type="text" name="taskName" placeholder="Your task name" [(ngModel)]="newTask.taskName">
     </label>
     <label for="startDate">
-        <input type="date" name="startDate" >
+        <input type="date" name="startDate" [(ngModel)]="newTask.startDate" >
     </label>
     <label for="endDate">
-        <input type="date" name="endDate" >
+        <input type="date" name="endDate" [(ngModel)]="newTask.endDate" >
     </label>
     <br>
     <label for="importance">
         Importance:
-        <select name="importance" id="importance">
+        <select name="importance" id="importance" [(ngModel)]="newTask.importance">
             <option *ngFor="let imp of importanceTask" [value]="imp">{{ imp }}</option>
         </select>
     </label>
     <br>
     <label for="notes">
-        <textarea name="notes" cols="30" rows="10"></textarea>
+        <textarea name="notes" cols="30" rows="10" [(ngModel)]="newTask.notes"></textarea>
     </label>
     <br>
     <button type="submit">Add task</button>
