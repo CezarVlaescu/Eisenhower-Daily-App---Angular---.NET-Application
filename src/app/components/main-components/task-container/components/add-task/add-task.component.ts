@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NewTask, Importance } from '../../types/taskType';
+import { TaskSharedService } from '../../services/task-shared-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-task',
@@ -7,13 +9,20 @@ import { NewTask, Importance } from '../../types/taskType';
   styleUrls: ['./add-task.component.scss']
 })
 export class AddTaskComponent {
-  newTask: NewTask = new NewTask();
+
+  newTask: NewTask;
   importanceTask = Object.values(Importance);  
 
-  constructor() {}
+  constructor(
+    private taskSharedService: TaskSharedService,
+    private router: Router
+  ) {
+    this.newTask = new NewTask();
+  }
 
-  onSubmitTask() {
-    throw new Error('Method not implemented.');
-    }
+  onSubmitTask(){
+    this.taskSharedService.addTask(this.newTask);
+    return this.router.navigate(['/home'])
+  }
 
 }
