@@ -24,8 +24,9 @@ export class TaskContainerComponent implements OnInit, OnDestroy {
     .pipe(takeUntil(this.$unsubscribe))
     .subscribe(tasks => {
       this.tasks = tasks;
-      tasks.forEach(task => this.onTaskAdded(task));
+      this.onTaskAdded();
     });
+    console.log(this.tasks);
   }
 
   ngOnDestroy(): void {
@@ -33,16 +34,30 @@ export class TaskContainerComponent implements OnInit, OnDestroy {
     this.$unsubscribe.complete();
   }
 
-  public onTaskAdded(newTask : NewTask) : void {    
+  public onTaskAdded() : void {    
     if(this.tasks[0].importance === undefined){
       throw new Error(`importance not set`)
     }
-    switch(this.tasks[0].importance){
-      case Importance.Do : this.doTasks.tasks.push(newTask); break;
-      case Importance.Decide : this.decideTasks.tasks.push(newTask); break;
-      case Importance.Delegate: this.delegateTasks.tasks.push(newTask); break;
-      case Importance.Delete: this.delegateTasks.tasks.push(newTask); break;
-    }
-  }
+    this.tasks.forEach(task => {
+      switch (task.importance) {
+        case Importance.Do:
+          this.doTasks.tasks.push(task);
+          break;
+        case Importance.Decide:
+          this.decideTasks.tasks.push(task);
+          break;
+        case Importance.Delegate:
+          this.delegateTasks.tasks.push(task);
+          break;
+        case Importance.Delete:
+          this.deleteTasks.tasks.push(task);
+          break;
 
+        default:
+          console.warn(`Task with undefined or unexpected importance: ${task}`);
+          break;
+      }
+    });
+  }
 }
+
