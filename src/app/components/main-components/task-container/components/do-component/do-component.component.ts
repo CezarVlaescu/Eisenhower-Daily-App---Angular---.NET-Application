@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { DoPool, NewTask } from '../../types/taskType';
 
 @Component({
   selector: 'app-do-component',
   templateUrl: './do-component.component.html',
   styleUrls: ['./do-component.component.scss']
 })
-export class DoComponentComponent {
+export class DoComponentComponent implements OnInit, OnChanges {
+  @Input() doPool: DoPool = { tasks : []};
+  doTasks : NewTask[] = [];
+
+  constructor(){}
+
+  ngOnInit() {
+    this.updateDoTasks();
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    if(changes['pool']) this.updateDoTasks();
+  }
+
+  private updateDoTasks(){
+    this.doTasks = this.doPool.tasks;
+  }
 
 }
