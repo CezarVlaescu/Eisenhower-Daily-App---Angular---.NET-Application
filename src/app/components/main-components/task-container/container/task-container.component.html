@@ -1,9 +1,9 @@
 <div class="eisenhower-matrix">
     <div class="important">Important</div>
     <div class="not-important">Not important</div>
-    <app-do-component class="important-urgent">Do component works!</app-do-component>
-    <app-decide-component class="important-not-urgent">Decide component works!</app-decide-component>
-    <app-delegate-component class="not-important-urgent">Delegate component works!</app-delegate-component>
-    <app-delete-component class="not-important-not-urgent">Delete component works!</app-delete-component>
+    <app-do-component class="important-urgent" [doPool]="doTasks">Do component works!</app-do-component>
+    <app-decide-component class="important-not-urgent" [decidePool]="decideTasks">Decide component works!</app-decide-component>
+    <app-delegate-component class="not-important-urgent" [delegatePool]="delegateTasks">Delegate component works!</app-delegate-component>
+    <app-delete-component class="not-important-not-urgent" [deletePool]="deleteTasks">Delete component works!</app-delete-component>
     <button routerLink="/add-task" type="button">Add new task!</button>
 </div>
