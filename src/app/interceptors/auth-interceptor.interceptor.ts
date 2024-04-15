@@ -3,25 +3,28 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, mergeMap, throwError } from 'rxjs';
+import { AuthServiceService } from '../services/auth-service.service';
 
 @Injectable()
 export class AuthInterceptorInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private auth: AuthServiceService) {}
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    
-    const authToken = localStorage.getItem('token'); // to put the service that get the token from backend
-
-    if(authToken){ // if the token is present
-      const req = request.clone({
-        headers: request.headers.set('Authorization', 'Bearer ' + authToken)
-      }) // attache to the user header
-      return next.handle(req);
-    }
-    else return next.handle(request);
+  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>>{
+    return this.auth.getTokenAsync().pipe(mergeMap((jtwToken) => {
+      if(jtwToken){
+        request = request.clone({
+          headers: request.headers.set('Authorization', `Bearer ${jtwToken}`)
+        })
+      }
+      return next.handle(request);
+    }), catchError((error: HttpErrorResponse) => {
+        if(error.status === 401) throw new Error("Implement the logout service instand of throwing an Error"); // force logout, implemented service ex. this.auth.Logout() 
+        return throwError(() => new Error('Error handling in HTTP Interceptor'));
+    }));
   }
 }
