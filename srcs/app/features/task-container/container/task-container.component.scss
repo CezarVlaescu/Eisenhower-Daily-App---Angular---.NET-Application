@@ -1,0 +1,65 @@
+.eisenhower-matrix {
+    display: grid;
+    grid-template-areas:
+      "label-urgent label-not-urgent"
+      "do decide"
+      "delegate delete";
+    grid-template-columns: 1fr 1fr; // Two columns of equal size
+    grid-template-rows: auto 1fr 1fr; // Auto for labels, equal flexible rows for content
+    gap: 20px;
+    padding: 20px;
+    align-items: start; // Align content at the top of the grid area
+  
+    > .important, > .not-important {
+      text-align: center;
+      padding: 10px;
+      color: white;
+    }
+  
+    > .important {
+      grid-area: label-urgent;
+      background-color: #27ae60; // Green for "Important"
+    }
+  
+    > .not-important {
+      grid-area: label-not-urgent;
+      background-color: #e74c3c; // Red for "Not important"
+    }
+  
+    > app-do-component.important-urgent {
+      grid-area: do;
+      background-color: #2ecc71; // Light green for "Do"
+    }
+  
+    > app-decide-component.important-not-urgent {
+      grid-area: decide;
+      background-color: #3498db; // Light blue for "Decide"
+    }
+  
+    > app-delegate-component.not-important-urgent {
+      grid-area: delegate;
+      background-color: #f39c12; // Orange for "Delegate"
+    }
+  
+    > app-delete-component.not-important-not-urgent {
+      grid-area: delete;
+      background-color: #95a5a6; // Grey for "Delete"
+    }
+  
+    > button {
+      grid-column: 1 / -1; // Span across both columns at the bottom
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #3498db; // Blue for the button
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      &:hover {
+        background-color: #2980b9;
+      }
+    }
+  }
+  
