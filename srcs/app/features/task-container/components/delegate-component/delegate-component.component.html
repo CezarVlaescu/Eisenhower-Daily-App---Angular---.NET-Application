@@ -1,3 +1,8 @@
-<div *ngFor="let task of delegateTasks">
-    {{task.taskName}} / {{task.notes}}
+<div class="task-container" [class.has-tasks]="delegateTasks.length > 0">
+    <h3 *ngIf="delegateTasks.length === 0" class="task-type">Delegate</h3>
+    <div *ngFor="let task of delegateTasks" class="task">
+        {{task.taskName}} / {{task.notes}}
+    </div>
 </div>
+
+
