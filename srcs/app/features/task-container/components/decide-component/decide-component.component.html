@@ -1,3 +1,8 @@
-<div *ngFor="let task of decideTasks">
-    {{task.taskName}} / {{task.notes}}
+<div class="task-container" [class.has-tasks]="decideTasks.length > 0">
+    <h3 *ngIf="decideTasks.length === 0" class="task-type">Decide</h3>
+    <div *ngFor="let task of decideTasks" class="task">
+        {{task.taskName}} / {{task.notes}}
+    </div>
 </div>
+
+
