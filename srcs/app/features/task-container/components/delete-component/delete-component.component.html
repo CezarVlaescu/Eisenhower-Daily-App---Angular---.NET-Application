@@ -1,6 +1,0 @@
-<div class="task-container" [class.has-tasks]="deleteTasks.length > 0">
-    <h3 *ngIf="deleteTasks.length === 0" class="task-type">Delete</h3>
-    <div *ngFor="let task of deleteTasks" class="task">
-        {{task.taskName}} / {{task.endDate}}
-    </div>   
-</div>

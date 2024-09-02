@@ -1,6 +1,0 @@
-<div class="task-container" [class.has-tasks]="doTasks.length > 0">
-    <h3 *ngIf="doTasks.length === 0" class="task-type">Do</h3>
-    <div *ngFor="let task of doTasks" class="task">
-        {{ task.taskName }} / {{ task.startDate }}  
-    </div>    
-</div>
