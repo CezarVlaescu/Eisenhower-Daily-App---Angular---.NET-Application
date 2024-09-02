@@ -2,7 +2,7 @@
 
 ## Overview
 
-Eisenhower Matrix Daily Planner is a productivity application built with Angular for the front end, .NET for the back end, and SQL Server Management Studio (SSMS) for database management. This application is designed to help users organize their daily tasks using the Eisenhower Matrix, a powerful method for prioritizing activities based on urgency and importance.
+Eisenhower Matrix Daily Planner is a productivity application built with Angular for the front end, .NET for the back end, and Mongo Atlas for database management and cloud. This application is designed to help users organize their daily tasks using the Eisenhower Matrix, a powerful method for prioritizing activities based on urgency and importance.
 
 ## Features
 
@@ -12,7 +12,7 @@ User-Friendly Interface: The Angular front end provides an intuitive and respons
 
 Secure Back End: Powered by .NET, the back end ensures data security and seamless communication between the front end and the database.
 
-Database Management with SSMS: Utilize SQL Server Management Studio for robust and scalable database management, ensuring the reliability of your task data.
+Database Management with Mongo Atlas: Utilize Mongo Atlas for robust and scalable database management, ensuring the reliability of your task data.
 
 Daily Task Tracking: Keep track of completed, pending, and upcoming tasks, providing insights into your productivity and helping you stay on top of your goals.
 
