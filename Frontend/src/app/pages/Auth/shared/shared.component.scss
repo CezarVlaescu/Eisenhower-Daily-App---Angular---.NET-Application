@@ -1,0 +1,42 @@
+.shared-form-container {
+    border: 1px solid black;
+    height: auto;
+    background-color: white;
+    border-radius: 1%;
+    width: 80vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+
+    &__inner{
+        height: auto;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 20px;
+
+        &__title{
+            align-self: center;
+        }
+
+        &__fields{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; 
+}

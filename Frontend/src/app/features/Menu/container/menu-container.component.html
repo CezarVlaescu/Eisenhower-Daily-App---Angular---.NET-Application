@@ -1,0 +1,13 @@
+<div class="menu-container">
+  <div class="menu-container__top-profile">
+    <app-profile></app-profile>
+  </div>
+  <div class="menu-container__menu-elements">
+    <ng-container *appScreenSize="'desktop'">
+      <app-menu-elements></app-menu-elements>
+    </ng-container>
+    <ng-container *appScreenSize="'mobile'">
+      <app-burger-menu-mobile></app-burger-menu-mobile>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="register-container">
+  <h1>Not registered yet?</h1>
+  <h3>Join us today!</h3>
+  <app-shared (subbmited)="registerUser($event)">
+    <div register class="register-container__inner">
+      <label class="register-container__inner__confirm">
+        Confirm Password
+        <input
+          type="password"
+          name="confirm-password"
+          placeholder="Rewrite your password"
+        />
+      </label>
+      <label class="register-container__inner__confirm">
+        Username
+        <input 
+        type="email"
+        name="email" 
+        placeholder="Username"
+        [(ngModel)]="username"
+        required />
+      </label>
+      <label class="register-container__inner__confirm">
+        Profile Image
+        <input type="file" (change)="onFileChanged($event)" #fileInput />
+      </label>
+    </div>
+    <a link href="/login">Already registered? Log in!</a>
+    <button type="submit">Register</button>
+  </app-shared>
+</div>

@@ -1,0 +1,35 @@
+<div class="tasks-container">
+  <ng-container *appScreenSize="'desktop'">
+    <div class="tasks-container__top-part">
+      <div class="tasks-container__top-part__content">
+        <h1>Current day : {{date}}</h1>
+        <h1>Motto of the day: {{motto}}</h1>
+        <app-button
+          [button]="buttonInput"
+          (buttonClicked)="openDialog()"
+        ></app-button>
+      </div>
+    </div>
+    <div class="tasks-container__bottom-part">
+      <div class="tasks-container__bottom-part__left-tables">
+        <div class="tasks-container__bottom-part__left-tables__do">
+          <app-tabletasks [tasks]="taskPool?.doTasks"></app-tabletasks>
+        </div>
+        <div class="tasks-container__bottom-part__left-tables__delegate">
+          <app-tabletasks [tasks]="taskPool?.delegateTasks"></app-tabletasks>
+        </div>
+      </div>
+      <div class="tasks-container__bottom-part__right-tables">
+        <div class="tasks-container__bottom-part__right-tables__decide">
+          <app-tabletasks [tasks]="taskPool?.decideTasks"></app-tabletasks>
+        </div>
+        <div class="tasks-container__bottom-part__right-tables__delete">
+          <app-tabletasks [tasks]="taskPool?.deleteTasks"></app-tabletasks>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *appScreenSize="'mobile'">
+    <app-tasks-mobile-view></app-tasks-mobile-view>
+  </ng-container>
+</div>

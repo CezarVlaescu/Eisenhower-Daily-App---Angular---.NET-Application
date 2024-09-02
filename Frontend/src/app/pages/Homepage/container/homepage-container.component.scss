@@ -1,0 +1,17 @@
+.home-container {
+    display: flex;
+    border: 1px solid var(--color-dark);
+    width: 94vw;
+    height: 89vh;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+
+    &__left-menu {
+        flex: 0 0 18%;
+        border: 1px solid black;
+    }
+
+    &__right-tasks {
+        flex: 1;
+        border: 1px solid black;
+    }
+}

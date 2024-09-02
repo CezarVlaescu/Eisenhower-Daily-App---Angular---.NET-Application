@@ -1,0 +1,20 @@
+.menu-container {
+    padding: 22px;
+    height: 83.5vh;
+    display: flex;
+    gap: 70px;
+    flex-direction: column;
+
+    &__menu-elements{
+        align-self: center;
+        align-items: normal;
+        display: flex;
+        height: 70%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .menu-container {
+        flex-direction: row-reverse;
+    }
+}

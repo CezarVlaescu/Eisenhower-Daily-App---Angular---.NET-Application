@@ -1,0 +1,75 @@
+.tasks-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-height: auto;
+    gap: 30px;
+
+    &__top-part{
+        flex: 0 0 10%;
+        display: flex;
+        flex-direction: column;
+
+        &__content{
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            align-items: center;
+        }
+    }
+
+    &__bottom-part{
+        flex: 1;
+        display: flex;
+        border: 1px solid black;
+
+        &__left-tables {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            &__do{
+                height: 50%;
+                border: 1px solid black;
+                background-color: green;
+            }
+
+            &__delegate{
+                height: 50%;
+                border: 1px solid black;
+                background-color: grey;
+            }
+        }
+
+        &__right-tables {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            &__decide {
+                height: 50%;
+                border: 1px solid black;
+                background-color: purple;
+            }
+
+            &__delete {
+                height: 50%;
+                border: 1px solid black;
+                background-color: red;
+            }
+        }
+    }
+}
+
+@media (max-width: 1260px) {
+    .tasks-container{
+        gap: 0px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .tasks-container{
+        justify-content: space-around;
+        gap: 50px;
+    }
+}

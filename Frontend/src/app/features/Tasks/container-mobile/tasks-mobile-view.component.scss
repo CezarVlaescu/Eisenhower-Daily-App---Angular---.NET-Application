@@ -1,0 +1,57 @@
+.tasks-container-mobile {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    max-width: 80vw;
+    gap: 30px;
+}
+
+.tasks-container-mobile__top-part {
+    flex: 0 0 auto; 
+    padding-bottom: 10px; 
+    align-self: center;
+}
+
+.tasks-container-mobile__top-part__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.tasks-container-mobile__bottom-part {
+    display: flex;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    height: 100%; 
+    width: 100%;
+}
+
+.task-panel {
+    flex: none;
+    min-width: 100%; 
+    height: 100%; 
+    box-sizing: border-box; 
+    border: 1px solid black; 
+    scroll-snap-align: start; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.do-tasks {
+    background-color: green;
+}
+
+.delegate-tasks {
+    background-color: grey;
+}
+
+.decide-tasks {
+    background-color: purple;
+}
+
+.delete-tasks {
+    background-color: red;
+}

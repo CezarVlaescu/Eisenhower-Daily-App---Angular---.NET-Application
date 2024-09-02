@@ -1,0 +1,19 @@
+.button-container {
+  width: 100%;
+  min-width: 10vw;
+  min-height: 4vh;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container:hover {
+  background-image: var(--gradient-peacock);
+}
+
+@media (max-width: 1050px) {
+  .button-container {
+    padding: 8px;
+  }
+}

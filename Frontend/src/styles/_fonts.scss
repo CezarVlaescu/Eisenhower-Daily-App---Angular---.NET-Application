@@ -1,0 +1,28 @@
+:root {
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    --font-serif: 'Lora', serif;
+    --font-accent: 'Poppins', sans-serif;
+    --font-decorative: 'Playfair Display', serif;
+}
+
+body {
+    font-family: var(--font-primary);
+}
+  
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+}
+  
+p {
+    font-family: var(--font-serif);
+}
+  
+.button {
+    font-family: var(--font-accent);
+}
+  
+.quote {
+    font-family: var(--font-decorative);
+}
+

@@ -1,0 +1,35 @@
+<form
+  (ngSubmit)="submitForm(authForm.value, authForm.valid)"
+  #authForm="ngForm"
+  class="shared-form-container"
+>
+  <div class="shared-form-container__inner">
+    <div class="shared-form-container__inner__title">
+      <ng-content select="h3"></ng-content>
+    </div>
+    <label class="shared-form-container__inner__fields">
+      Email
+      <input
+        type="text"
+        name="email"
+        placeholder="Email address"
+        [(ngModel)]="email"
+        required
+      />
+    </label>
+    <label class="shared-form-container__inner__fields">
+      Password
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        placeholder="Enter your passowrd"
+        required
+      />
+    </label>
+    <ng-content select="[login]"></ng-content>
+    <ng-content select="[register]"></ng-content>
+    <ng-content select="[link]"></ng-content>
+    <ng-content select="button"></ng-content>
+  </div>
+</form>

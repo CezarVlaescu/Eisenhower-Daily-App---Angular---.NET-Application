@@ -1,0 +1,75 @@
+.table-container {
+  max-height: 345px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.scrollable-table {
+  display: block;
+
+  &__name {
+    width: 550px;
+  }
+
+  &__time {
+    width: 80px;
+  }
+}
+
+table {
+  width: 100%;
+  background-color: transparent;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-container::-ms-scrollbar {
+  width: 8px;
+}
+
+.table-container::-ms-scrollbar-track {
+  background: transparent;
+}
+
+.table-container::-ms-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+@media (max-height: 740px) {
+  .table-container {
+    max-height: 290px;
+  }
+}
+
+@media (max-height: 667px) {
+  .table-container {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 430px){
+  .scrollable-table { 
+    &__name {
+      width: 210px;
+    }
+  
+    &__time {
+      width: 80px;
+    }
+  }
+}

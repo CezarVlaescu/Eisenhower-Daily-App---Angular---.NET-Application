@@ -1,0 +1,56 @@
+:root {
+  --font-size-xxs: 0.625rem; /* 10px */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-xxl: 2rem; /* 32px */
+  --font-size-xxxl: 2.5rem; /* 40px */
+  --font-size-huge: 3rem; /* 48px */
+  --font-size-gigantic: 4rem; /* 64px */
+}
+
+body {
+  font-size: var(--font-size-md);
+}
+
+h1 {
+  font-size: var(--font-size-gigantic);
+}
+
+h2 {
+  font-size: var(--font-size-huge);
+}
+
+h3 {
+  font-size: var(--font-size-xxxl);
+}
+
+h4 {
+  font-size: var(--font-size-xxl);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+}
+
+p {
+  font-size: var(--font-size-md);
+}
+
+.small-text {
+  font-size: var(--font-size-sm);
+}
+
+.extra-small-text {
+  font-size: var(--font-size-xs);
+}
+
+.tiny-text {
+  font-size: var(--font-size-xxs);
+}

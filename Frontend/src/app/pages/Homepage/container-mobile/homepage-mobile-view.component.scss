@@ -1,0 +1,11 @@
+.homepage-container-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-height: 740px) {
+    .homepage-container-mobile{
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,15 @@
+<div>
+  <ng-container *appScreenSize="'desktop'">
+    <div class="home-container">
+      <div class="home-container__left-menu">
+        <app-menu-container></app-menu-container>
+      </div>
+      <div class="home-container__right-tasks">
+        <app-tasks-container></app-tasks-container>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *appScreenSize="'mobile'">
+     <app-homepage-mobile-view></app-homepage-mobile-view>
+  </ng-container>
+</div>

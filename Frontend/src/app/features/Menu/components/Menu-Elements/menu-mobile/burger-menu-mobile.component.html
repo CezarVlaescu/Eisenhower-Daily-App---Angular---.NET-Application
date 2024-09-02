@@ -1,0 +1,16 @@
+<div class="burger-menu-container">
+  <ng-container>
+    <mat-icon
+      mat-button
+      [matMenuTriggerFor]="menu"
+      aria-hidden="false"
+      fontIcon="menu"
+    ></mat-icon>
+    <mat-menu #menu="matMenu" yPosition="below">
+      <div *ngFor="let item of menuItems">
+        <app-button [button]="item"></app-button>
+      </div>
+    </mat-menu>
+    <app-profile></app-profile>
+  </ng-container>
+</div>

@@ -1,0 +1,29 @@
+.profile-container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+    &__profile-picture{
+        display: flex;
+
+        &__inner{
+           width: 5rem;
+           height: 5rem;
+        }
+    }
+
+    &__profile-name{
+       flex: 1;
+       display: flex;
+       justify-content: center;
+    }
+}
+
+@media (max-width: 1050px) {
+    .profile-container {
+        flex-direction: row-reverse;
+    }
+    .profile-container__profile-name {
+        flex: none;
+    }
+}

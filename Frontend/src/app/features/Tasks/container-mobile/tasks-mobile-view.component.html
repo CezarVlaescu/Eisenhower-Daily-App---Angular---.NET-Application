@@ -1,0 +1,28 @@
+<div class="tasks-container-mobile">
+  <div class="tasks-container-mobile__top-part">
+    <div class="tasks-container-mobile__top-part__content">
+      <h1>Current day</h1>
+      <h2>{{date}}</h2>
+      <h1>Motto of the day</h1>
+      <h2>{{motto}}</h2>
+      <app-button
+        [button]="buttonInput"
+        (buttonClicked)="openDialog()"
+      ></app-button>
+    </div>
+  </div>
+  <div class="tasks-container-mobile__bottom-part">
+    <div class="task-panel do-tasks">
+      <app-table-tasks-mobile [tasks]="taskPool?.doTasks"></app-table-tasks-mobile>
+    </div>
+    <div class="task-panel decide-tasks">
+      <app-table-tasks-mobile [tasks]="taskPool?.decideTasks"></app-table-tasks-mobile>
+    </div>
+    <div class="task-panel delegate-tasks">
+      <app-table-tasks-mobile [tasks]="taskPool?.delegateTasks"></app-table-tasks-mobile>
+    </div>
+    <div class="task-panel delete-tasks">
+      <app-table-tasks-mobile [tasks]="taskPool?.deleteTasks"></app-table-tasks-mobile>
+    </div>
+  </div>
+</div>
